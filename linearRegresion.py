@@ -5,7 +5,7 @@ import pandas as pd
 dataset = pd.read_csv("SalaryData.csv")
 
 #getting the dataset colums
-print(dataset.columns)
+#print(dataset.columns)
 
 X = dataset['YearsExperience']
 y = dataset['Salary']
@@ -27,4 +27,5 @@ X_train, X_test, y_train, y_test = train_test_split (X, y, test_size=0.2, random
 model.fit(X_train,y_train)
 
 #predict the output
-print(model.predict([[1]]))
+exp = int(input("Enter your Experience :"))
+print("Your Expected  Salary for this job is: ", int(model.predict([[exp]])) , "INR" )
